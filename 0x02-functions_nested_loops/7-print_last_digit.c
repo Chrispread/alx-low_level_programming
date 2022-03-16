@@ -1,26 +1,23 @@
 #include "main.h"
-
 /**
- * jack_bauer - prints time
- *
- * Description: prints a list of time
- * Return: Always 0.
+ *print_last_digit - print the last digit of a number
+ * @n: int type number
+ * Return: return value of last digit
  */
-
-void jack_bauer(void)
+int print_last_digit(int n)
 {
-	int i, j;
+	int r;
 
-	for (i = 0; i < 24; i++)
+	if (n < 0)
 	{
-		for (j = 0; j < 60; j++)
-		{
-			_putchar(i / 10 + 48);
-			_putchar(i % 10 + 48);
-			_putchar(':');
-			_putchar(j / 10 + 48);
-			_putchar(j % 10 + 48);
-			_putchar('\n');
-		}
+		r = -1 * (n % 10);
+		_putchar(r + '0');
+		return (r);
+	}
+	else
+	{
+		r = n % 10;
+		_putchar(r + '0');
+		return (r);
 	}
 }
