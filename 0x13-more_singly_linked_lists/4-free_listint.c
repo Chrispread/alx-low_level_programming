@@ -7,13 +7,9 @@
 
 void free_listint(listint_t *head)
 {
-	listint_t *t;
-
-	t = head;
-	while (head != NULL)
-	{
-		head = head->next;
-		free(head);
-	}
-	free(t);
+	struct node *n = head;
+	while(n){
+   	struct node *n1 = n;
+   	n = n->next;
+   	free(n1);
 }
